@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Appointment Scheduling and QR Code Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Smart System</div>
+        <button class="menu-toggle">☰ Menu</button>
+        <div class="user-profile">
+            <span>Welcome, User</span>
+            <button>Logout</button>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            
+            <nav>
+                <ul>
+                    <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/home.html" id="dashboard-link">Dashboard</a></li>
+                    <li>
+                        <a href="" class="submenu-toggle">User Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/view-users.html" id="view User">View Users</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/add-user.html" id="add-user">Add User</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Edit-user.html" id="Edit-user">Edit User</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Course Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/View%20Class%20Sessions.html">View Courses</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/add%20course.html">Add Course</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/edit_course.html">Edit Course</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Class Session Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/View%20Class%20Sessions.html">View Class Sessions</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Add%20Class%20Session.html">Add Class Session</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Edit%20Class%20Session.html">Edit Class Session</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Appointment Scheduling</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/view_appointments.html">View Appointments</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/schedule_appointment.html">Schedule Appointment</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/edit_appointment.html">Edit Appointment</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Attendance Tracking</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/ViewAttendanceRecords.html">View Attendance Records</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Attendance%20Tracking.html">Mark Attendance (QR Code Scan)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Settings</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Profile%20Settings.html">Profile Settings</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/System%20Settings.html">System Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="main-content">
+            <h1>Edit Class Session</h1>
+            <form action="update-class-session.html" method="post">
+                <div class="form-group">
+                    <label for="course">Course:</label>
+                    <select id="course" name="course">
+                        <option value="Math 101">Math 101</option>
+                        <option value="Science 102">Science 102</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="teacher">Teacher:</label>
+                    <select id="teacher" name="teacher">
+                        <option value="John Doe">John Doe</option>
+                        <option value="Jane Smith">Jane Smith</option>
+                        <!-- Add more options as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="start-time">Start Time:</label>
+                    <input type="time" id="start-time" name="start-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="end-time">End Time:</label>
+                    <input type="time" id="end-time" name="end-time" required>
+                </div>
+                <button type="submit">Update Session</button>
+            </form>
+        </div>
+    
+    </div>
+    <footer>
+        <p>&copy; 2024 Smart System. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>

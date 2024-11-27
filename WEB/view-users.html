@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Appointment Scheduling and QR Code Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Smart System</div>
+        <button class="menu-toggle">☰ Menu</button>
+        <div class="user-profile">
+            <span>Welcome, User</span>
+            <button>Logout</button>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            
+            <nav>
+                <ul>
+                    <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/home.html" id="dashboard-link">Dashboard</a></li>
+                    <li>
+                        <a href="UserManagement.html" class="submenu-toggle">User Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/view-users.html" id="view User">View Users</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/add-user.html" id="add-user">Add User</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Edit-user.html" id="Edit-user">Edit User</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="CourseManagement.html" class="submenu-toggle">Course Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/View%20Class%20Sessions.html">View Courses</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/add%20course.html">Add Course</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/edit_course.html">Edit Course</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="ClassSessionManagement.html" class="submenu-toggle">Class Session Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/View%20Class%20Sessions.html">View Class Sessions</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Add%20Class%20Session.html">Add Class Session</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Edit%20Class%20Session.html">Edit Class Session</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="AppointmentScheduling.html" class="submenu-toggle">Appointment Scheduling</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/view_appointments.html">View Appointments</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/schedule_appointment.html">Schedule Appointment</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/edit_appointment.html">Edit Appointment</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Attendance Tracking</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/ViewAttendanceRecords.html">View Attendance Records</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Attendance%20Tracking.html">Mark Attendance (QR Code Scan)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Settings</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Profile%20Settings.html">Profile Settings</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/System%20Settings.html">System Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content" id="main-content">
+            <h2>View Users</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>UserID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Additional Info</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Example of a Student user -->
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>john.doe@example.com</td>
+                        <td>Student</td>
+                        <td>
+                            Student Number: S1234<br>
+                            Department: Computer Science<br>
+                            Year: 3
+                        </td>
+                        <td>
+                            <button onclick="editUser(1)">Edit</button>
+                            <button onclick="deleteUser(1)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Example of a Teacher user -->
+                    <tr>
+                        <td>2</td>
+                        <td>Jane</td>
+                        <td>Smith</td>
+                        <td>jane.smith@example.com</td>
+                        <td>Teacher</td>
+                        <td>
+                            Staff Number: T5678<br>
+                            Department: Mathematics
+                        </td>
+                        <td>
+                            <button onclick="editUser(2)">Edit</button>
+                            <button onclick="deleteUser(2)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Example of an Admin user -->
+                    <tr>
+                        <td>3</td>
+                        <td>Michael</td>
+                        <td>Johnson</td>
+                        <td>michael.johnson@example.com</td>
+                        <td>Admin</td>
+                        <td>
+                            Staff Number: A91011
+                        </td>
+                        <td>
+                            <button onclick="editUser(3)">Edit</button>
+                            <button onclick="deleteUser(3)">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- More user rows as needed -->
+                </tbody>
+            </table>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2024 Smart System. All rights reserved.</p>
+    </footer>
+    <script>
+        function loadPage(url) {
+            // Fetch the content of the specified URL
+            fetch(url)
+                .then(response => response.text())
+                .then(data => {
+                    // Replace the inner HTML of the main content tag with the loaded content
+                    document.getElementById('main-content').innerHTML = data;
+                })
+                .catch(error => console.error('Error loading page:', error));
+        }
+
+        function editUser(userId) {
+            // Logic to edit a user with the given ID
+            alert('Edit user ' + userId);
+        }
+
+        function deleteUser(userId) {
+            // Logic to delete a user with the given ID
+            alert('Delete user ' + userId);
+        }
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

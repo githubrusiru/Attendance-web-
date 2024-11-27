@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Appointment Scheduling and QR Code Attendance System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">Smart System</div>
+        <button class="menu-toggle">☰ Menu</button>
+        <div class="user-profile">
+            <span>Welcome, User</span>
+            <button>Logout</button>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="sidebar">
+            
+            <nav>
+                <ul>
+                    <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/home.html" id="dashboard-link">Dashboard</a></li>
+                    <li>
+                        <a href="" class="submenu-toggle">User Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/view-users.html" id="view User">View Users</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/add-user.html" id="add-user">Add User</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Edit-user.html" id="Edit-user">Edit User</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Course Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/View%20Class%20Sessions.html">View Courses</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/add%20course.html">Add Course</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/edit_course.html">Edit Course</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Class Session Management</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/View%20Class%20Sessions.html">View Class Sessions</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Add%20Class%20Session.html">Add Class Session</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Edit%20Class%20Session.html">Edit Class Session</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Appointment Scheduling</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/view_appointments.html">View Appointments</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/schedule_appointment.html">Schedule Appointment</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/edit_appointment.html">Edit Appointment</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Attendance Tracking</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/ViewAttendanceRecords.html">View Attendance Records</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Attendance%20Tracking.html">Mark Attendance (QR Code Scan)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="" class="submenu-toggle">Settings</a>
+                        <ul class="submenu">
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/Profile%20Settings.html">Profile Settings</a></li>
+                            <li><a href="file:///C:/Users/Rusiru%20pramod/Desktop/node/WEB/System%20Settings.html">System Settings</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content" id="main-content">
+            
+           
+            <h1>Profile Settings</h1>
+            <form id="profileForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+        
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br><br>
+        
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required><br><br>
+        
+                <label for="profilePicture">Profile Picture:</label>
+                <input type="file" id="profilePicture" name="profilePicture" accept="image/*" onchange="previewProfilePicture()"><br><br>
+                <img id="profilePicturePreview" src="" alt="Profile Picture Preview" style="max-width: 200px;"><br><br>
+        
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" rows="4" cols="50"></textarea><br><br>
+        
+                <button type="button" onclick="saveProfileSettings()">Save Settings</button>
+            </form>
+            <script>
+                function previewProfilePicture() {
+                    const file = document.getElementById('profilePicture').files[0];
+                    const reader = new FileReader();
+                    reader.onloadend = function() {
+                        document.getElementById('profilePicturePreview').src = reader.result;
+                    }
+                    if (file) {
+                        reader.readAsDataURL(file);
+                    }
+                }
+        
+                function saveProfileSettings() {
+                    const form = document.getElementById('profileForm');
+                    if (form.checkValidity()) {
+                        // Simulate saving settings
+                        alert('Profile settings saved!');
+                        // Implement actual saving logic here, e.g., send to server
+                    } else {
+                        form.reportValidity();
+                    }
+                }
+            </script>
+            </div>
+    <footer>
+        <p>&copy; 2024 Smart System. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
